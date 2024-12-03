@@ -54,7 +54,7 @@ def encoding_method(data):
 
 #####################################
 # Step 1: Data pre-processing
-#####################################
+#################################
 def pre_process(data):
 
     # Remove outliers from all data
