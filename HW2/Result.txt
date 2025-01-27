@@ -1,0 +1,44 @@
+Result:
+
+best_params = {'ccp_alpha': 0.001, 'max_depth': 3, 'min_impurity_decrease': 0.01, 'min_samples_leaf': 3, 'min_samples_split': 5}
+
+test accuracy = 0.6923076923076923
+
+|--- BMI <= 29.45
+|   |--- class: No Diabetes
+|--- BMI >  29.45
+|   |--- Glucose <= 117.50
+|   |   |--- BMI <= 34.95
+|   |   |   |--- class: Diabetes
+|   |   |--- BMI >  34.95
+|   |   |   |--- class: No Diabetes
+
+
+
+
+** Step 1: Data Preprocessing (there are a lot of 0 values in features, which are obvious outliers )
+1.1 Remove all the outliers from features.
+1.2 using MICE  to impute the missing values due to removing outliers.
+
+** Step 2: prepare train/validation/test dataset.
+2.1:  using train_test_split to split 20% to test datasets, 80% remains.
+2.2: using train_test_split  again to split 90% of the remains to train datasets (80%*90% = 72% of the total), and 10%(8% of the total) to the validation datasets
+
+** Step 3: try to find the best parameters
+3.1: prepare the params grid according to the requirement
+3.2
+-  using “for” loops to iterate all the parameter combinations, using each parameter combination to train the d-tree model, and comparing the accuracy of each model on the validation dataset to find which parameter combinations have the best accuracy. then we got the best parameters.
+- or using the GridSearchCV method to find the best parameter combination. the “CV” makes the best parameter more reliable.
+
+** Step 4:Find the Accuracy of test data
+4.1 train the best D-tree model with the best parameters we just get.
+4.2 predict and get the Accuracy of test data
+
+** Step 5: export the rules
+5.1 using export_text to export all the rules.
+5.2 split the rules string into a string array by “\n”
+5.3 loop the rules array, if the element contains “class”, then counter +1, if reaches 3 rules, break the loop.
+
+if we want "if... then ..."statement, we can refer to this article https://mljar.com/blog/extract-rules-decision-tree/
+
+

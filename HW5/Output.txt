@@ -1,0 +1,23 @@
+Output:
+Age Bin Name: 0.1-7.0  Count: 252
+Age Bin Name: 8.0-26.0  Count: 111
+{'min_sup': 0.1, 'min_conf': 0.85, 'min_lift': 4}
+total rules: 42
+
+
+Approaches:
+1: data preprocessing
+1.1 Gram_ID use values Positive/Negative , we should transform it to True and False.
+1.2 there is something we need to fix: Sex have some error, fix it
+    (not necessary due to Association Rules is not sensitive to outliers, but fix it is fine ).
+1.3:Discretize Age values with K-Means. We categorize it into 2 clusters.
+    And for better understand and easier to use, we use age range to name each age bin.
+    Drop Age column
+
+2:use get_dummies to get a dataframe with a "Tabular Data" format
+
+2:use for loop to iterate all the possible values of hyperparameter.
+
+3:using the criteria 20 <= high_lift_rules_df.shape[0] <= 50 to find the combination of hyperparameters.
+
+4:save the rules to csv file.

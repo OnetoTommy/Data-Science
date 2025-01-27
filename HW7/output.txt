@@ -1,0 +1,3 @@
+Naïve Bayes Test accuracy:   0.9230769230769231
+stationary state: [array([0.33630952, 0.48214286, 0.18154762])]
+most probable sequenceis: ['Penicillin', 'Ampicillin', 'Penicillin']

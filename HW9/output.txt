@@ -1,0 +1,30 @@
+*** 2: Employ forward wrapper method to select best three features from the dataset.
+['Fertility Rate', 'Minimum wage', 'Physicians per thousand']
+*** 3: Use a PCA model to create 3  new components from existing features:
+     Birth Rate  Co2-Emissions  ...  Population  Unemployment rate
+PC1   -0.402787       0.089749  ...    0.034343           0.000449
+PC2    0.025366       0.601685  ...    0.549523           0.003743
+PC3    0.104076       0.025227  ...    0.023589          -0.511756
+
+[3 rows x 12 columns]
+*** 4.Explain each PC (new features) based on the correlations with old features:
+ PC1 Strongly correlates to :
+    (Positively) :Life expectancy,Physicians Per K, Minimum wage",
+    (Negatively): Birth Rate, Fertility Rate, Infant Mortality ; Maternal Mortality ratio
+ suggesting it represents the healthy care
+
+ PC2 Strongly correlates to
+    (Positively) Co2 Emission, GDP, Population
+ suggesting it represents the macro economy activity
+
+ PC3: Strongly correlates to
+    (Positively): Gasoline Price, Minimum Wage
+    (Negatively): unemployment rate
+  suggesting it represents the labor market and energy price.
+
+*** 5:Use a LDA model to create 2 new components from existing features.
+*** 6:Compare the accuracy of a KNN classifier on new or selected features resulting by forward, PCA and LDA.
+Accuracy of SFS :  0.8404255319148937
+Accuracy of PCA :  0.8085106382978723
+Accuracy of LDA :  0.8617021276595744
+Over all, LDA demonstrates the highest classification accuracy on this data, while PCA shows the lowest accuracy.

@@ -52,7 +52,7 @@ def encoding_method(data):
     imputed_dataframe = pd.DataFrame(imputed_dataset, columns=df_encoded.columns)
     return imputed_dataframe
 
-#####################################
+#################################
 # Step 1: Data pre-processing
 #################################
 def pre_process(data):

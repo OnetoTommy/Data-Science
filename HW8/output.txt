@@ -1,0 +1,3 @@
+linear SVM accuracy:   0.9
+rbf SVM accuracy:   0.98
+best accuracy is:   0.98
